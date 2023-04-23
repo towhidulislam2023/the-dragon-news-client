@@ -28,7 +28,6 @@ const Login = () => {
    
     return (
         <>
-        <Header></Header>
         <Container className='my-5'>
                 <h1 className='text-center'>Login your account </h1>
                 <div className='loginbox'>

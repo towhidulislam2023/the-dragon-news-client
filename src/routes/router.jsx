@@ -6,6 +6,8 @@ import Login from "../Components/Login/Login";
 import SecondLayout from "../layout/SecondLayout";
 import Registar from "../Components/Registar/Registar";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import TertiaryLayout from "../layout/TertiaryLaout/TertiaryLayout";
+import CatagoryNews from "../Components/CatagoryNews/CatagoryNews";
 
 const router = createBrowserRouter([
     {
@@ -16,6 +18,11 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <News></News>,
                 loader: () => fetch('http://localhost:5000/news')
+            },
+            {
+                path: "/catagory/:id",
+                element:<CatagoryNews></CatagoryNews>,
+                loader: ({params}) => fetch(`http://localhost:5000/catagory/${params.id}`)
             },
         ]
     },
@@ -33,11 +40,26 @@ const router = createBrowserRouter([
     },
     {
         path: "/login",
-        element: <Login></Login>,
+        element:<TertiaryLayout></TertiaryLayout>,
+        children:[
+            {
+                path: "/login",
+                element: <Login></Login>,
+            },
+       
+        ]
     },
-    {
+     {
         path: "/registar",
-        element: <Registar></Registar>,
+         element: <TertiaryLayout></TertiaryLayout>,
+         children:[
+            {
+                path:"/registar",
+                element:<Registar></Registar>
+            }
+         ]
     },
+
+   
 ]);
 export default router

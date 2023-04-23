@@ -4,10 +4,12 @@ import Header from '../pages/Header/Header';
 import NavRight from '../pages/NavRight/NavRight';
 import NavLeft from '../pages/NavLeft/NavLeft';
 import { Outlet } from 'react-router-dom';
+import NavigationVar from '../pages/NavigationBar/NavigationVar';
 const MainLayout = () => {
     return (
         <>
         <Header></Header>
+        <NavigationVar/>
             <Container>
                 <Row>
                     <Col xs={2}><NavLeft></NavLeft></Col>

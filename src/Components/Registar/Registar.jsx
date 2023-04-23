@@ -37,7 +37,6 @@ const Registar = () => {
     }
     return (
         <>
-            <Header></Header>
             <Container className='my-5'>
                 <h1 className='text-center my-3'>Register your account</h1>
                 <div className='loginbox'>

@@ -26,7 +26,7 @@ const Cart = ({ news }) => {
                     <Card.Title className='fs-1'>{title}</Card.Title>
                     <img className='mx-auto d-block w-100 my-5' src={image_url} alt="" />
                     <Card.Text>
-                        {details.slice(0, 300)}.. <br /> <Link to={`news/${_id}`} className='text-decoration-none fw-bold btn btn-link'><span className='text-danger'>See More </span></Link>
+                        {details.slice(0, 300)}.. <br /> <Link to={`/news/${_id}`} className='text-decoration-none fw-bold btn btn-link'><span className='text-danger'>See More </span></Link>
                     </Card.Text>
                     <hr />
                     <div className='d-flex justify-content-between'>
