@@ -7,7 +7,7 @@ const NavLeft = () => {
 
     const [catagories, setCatagoris] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/catagories')
+        fetch('https://the-dragon-news-server-towhidulislam2023.vercel.app/catagories')
             .then(res => res.json())
             .then(data => setCatagoris(data))
             .catch(error => console.log(error))
@@ -15,15 +15,15 @@ const NavLeft = () => {
     }, [])
     return (
         <>
-      
-        <div>
-            <h4>All Caterogy</h4>
-            {
-                catagories && catagories.map(catagory =>
-                    <Link className='text-decoration-none' key={catagory.id} to={`/catagory/${catagory.id}`}> <h5 className='my-5 text-secondary' key={catagory.id}>{catagory.name}</h5></Link>
-                )
-            }
-        </div>
+
+            <div>
+                <h4>All Caterogy</h4>
+                {
+                    catagories && catagories.map(catagory =>
+                        <Link className='text-decoration-none' key={catagory.id} to={`/catagory/${catagory.id}`}> <h5 className='my-5 text-secondary' key={catagory.id}>{catagory.name}</h5></Link>
+                    )
+                }
+            </div>
             <Row xs={1} className="g-4">
                 <Col>
                     <Card>

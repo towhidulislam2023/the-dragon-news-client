@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../../pages/Header/Header';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { userAuthContex } from '../../provider/Auth/AuthProvider';
 const Registar = () => {
+    const [acceptTerm, setAcceptTerm] = useState(false)
     const { createUser, sendEmailforvarification, updateUserInfo }=useContext(userAuthContex)
     const handelRegistar=(event)=>{
         event.preventDefault()
@@ -35,6 +36,11 @@ const Registar = () => {
         })
         form.reset()
     }
+    const handelCheckbox= (event)=>{
+        setAcceptTerm(event.target.checked);
+
+    }
+    console.log(acceptTerm);
     return (
         <>
             <Container className='my-5'>
@@ -56,9 +62,11 @@ const Registar = () => {
                         <br />
                         <input type="password" name='password' className='w-100 py-2 px-2 my-2 rounded-1 border border-none ' placeholder='Enter your password' required />
                         <div className='d-flex align-items-center '>
-                            <input type="checkbox" /><small className='ms-2'>Accept Term & Conditions</small>
+                            <input onClick={handelCheckbox} type="checkbox" /><small className='ms-2'>
+                                <Link to={"/terms"}>Accept Term & Conditions</Link>   
+                                </small>
                         </div>
-                        <button className='w-100 bg-secondary border border-none mt-5 py-3 fw-bold rounded-1 text-white'>Register</button>
+                        <button className='w-100 bg-secondary border border-none mt-5 py-3 fw-bold rounded-1 text-white' disabled={!acceptTerm}>Register</button>
                         <p className='text-center my-2'><small>Do Have An Account ? <Link className='text-danger' to={"/login"}>Login</Link> </small></p>
                     </form>
 

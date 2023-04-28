@@ -7,7 +7,8 @@ import { userAuthContex } from '../../provider/Auth/AuthProvider';
 const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname || "/"
+    console.log(location);
+    const from = location.state?.pathname || "/"
     const { loginUser }=useContext(userAuthContex)
     const handelLogin=(event)=>{
         event.preventDefault()
