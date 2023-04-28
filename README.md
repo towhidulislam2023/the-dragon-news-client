@@ -1,5 +1,5 @@
-# the-dragon-news-client
-### The Dragon News
+### the-dragon-news-client
+# The Dragon News
 The Dragon News is a web application that provides users with up-to-date news and information about various topics, including world news, sports, entertainment, and technology.
 
 # Getting Started
@@ -22,13 +22,13 @@ Categories including world news, sports, entertainment, and technology
 Search functionality to find specific topics
 Filter by category using the navigation bar
 # Technologies Used
-HTML
-CSS
-JavaScript
-Firebase
-Contributors
+* HTML
+* CSS
+* JavaScript
+* Firebase
+# Contributors
 The Dragon News was created by a team of developers. For more information, please visit the contributors page on the website.
 
-License
+# License
 The Dragon News is licensed under the MIT License. For more information, please see the LICENSE file in this repository.
 
